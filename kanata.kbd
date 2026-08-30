@@ -1,0 +1,57 @@
+;; StarCdr_v12 Layout converted to Kanata (Macros & Symbol Layer preserved)
+;; ` key = tap for `, hold to flip StarCdr_v12 <-> QWERTY
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  grv 1 2 3 4 5 6 7 8 9 0 - =
+  q w e r t y u i o p [ ] \
+  caps a s d f g h j k l ; '
+  z x c v b n m , . /
+  spc
+)
+
+;; StarCdr_v12 Base Layer
+;; b g h m k  z _ o u  ⌫
+;; s r n t d  y c a e i  '
+;; q x l v f  p w j [ ]  ]
+(deflayer base
+  @grv 1 2 3 4 5 6 7 8 9 0 , =
+  b g h m k z S-- o u bspc ; . -
+  @cap s r n t d y c a e i '
+  q x l v f p w j [ ]
+  spc
+)
+
+;; Full QWERTY layer (for games, guests, muscle-memory fallback)
+(deflayer qwerty
+  @grvq
+  1 2 3 4 5 6 7 8 9 0 - =
+  q w e r t y u i o p [ ] \
+  @cap a s d f g h j k l ; '
+  z x c v b n m , . /
+  spc
+)
+
+;; Custom Symbol Layer (Activated by HOLDING Caps Lock) — unchanged
+(deflayer symbols
+  1 2 3 4 5 6 7 8 9 0 @dplus @deql
+  l @dand @dlow 3 4 5 6 7 S-1 S-3 , S-\ S-7 @dpip
+  _ S-5 S-` S-9 S-0 S-, S-. S-- S-[ S-] - S-2
+  S-6 1 2 S-= S-4 = S-8 8 9 0
+  spc
+)
+
+(defalias
+  cap (tap-hold 200 200 caps (layer-toggle symbols))
+  ;; ` key: tap = backtick, hold = permanent flip to the other layout
+  grv  (tap-hold 200 200 grv (layer-switch qwerty))
+  grvq (tap-hold 200 200 grv (layer-switch base))
+  dplus (macro S-= S-=)
+  deql  (macro = =)
+  dand  (macro S-7 S-7)
+  dlow  (macro S-- S--)
+  dpip  (macro S-\ S-\)
+)
