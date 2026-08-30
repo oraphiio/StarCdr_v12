@@ -1,0 +1,21 @@
+// data/layouts/starcdrv12.jsonc
+{
+    "layout": {
+        "fingers": [
+            "b g h m k  z _ o u skip",
+            "s r n t d  y c a e i",
+            "q x l v f  p w j [ ]",
+        ],
+        "thumbs": ["space"],
+    },
+    "board": {
+        "isRowStaggered": true,
+        "rowOrColumnStagger": [0, 0.25, 0.75],
+    },
+    // standard map; replace with your personal map below if desired
+    "fingermap": [
+        "1 1 2 2 2  7 7 7 8 8",
+        "0 1 2 3 3  6 6 7 8 9",
+        "0 1 2 3 3  6 6 7 8 9",
+    ],
+}
