@@ -5,6 +5,7 @@ Godot based Custom keyboard layout
 for C# and FLAX only
 <img width="1830" height="709" alt="image" src="https://github.com/user-attachments/assets/1b2b7998-c248-4c02-9bc2-858977519c74" />
 
+<img width="351" height="147" alt="image" src="https://github.com/user-attachments/assets/f8c195ec-b484-41fe-a99e-a12e1e157d1f" />
 
 
 
